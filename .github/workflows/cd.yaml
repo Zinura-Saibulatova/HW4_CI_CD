@@ -14,6 +14,6 @@ jobs:
           chmod 0600 ~/.ssh/id_rsa
        - run: ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org mkdir -p zinura
        - run: ssh -o StrictHostKeyChecking=no bdb2c2023q4_guest_3@brain-client.bigdatateam.org touch zinura/task41.txt
-       - run: python3 task.py ${{ secrets.SEED }} > task42.txt
+       - run: python3 task_seed_argv.py ${{ secrets.SEED }} > task42.txt
        - run: scp -o StrictHostKeyChecking=no task42.txt bdb2c2023q4_guest_3@brain-client.bigdatateam.org:zinura/
 
